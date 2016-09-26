@@ -85,6 +85,8 @@ var cacheTask = function(task, opts) {
         cb(new PluginError('gulp-cache', err));
       });
     }
+  }).on('end', function(){
+    task.emit('end');
   });
 };
 
